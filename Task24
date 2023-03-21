@@ -1,0 +1,24 @@
+import random
+
+n = int(input("Введите количество кустов в круге: "))
+set = [random.randint(0, 10) for _ in range(n)]
+print(set)
+sum = 0
+
+for i in range(len(set)):
+    if i == 0:
+        sum = set[i] + set[len(set) - 1] + set[len(set) - 2]
+
+    else:    
+        if i == 1:
+            sum1 = set[i] + set[len(set) - 1] + set[i - 1]
+            if sum < sum1:
+                sum = sum1
+
+        else:
+            sum1 = set[i] + set[i - 1] + set[i - 2]
+            if sum < sum1:
+                sum = sum1
+           
+print(sum)
+
